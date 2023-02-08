@@ -1,0 +1,2 @@
+#!/bin/bash
+(echo "./,"; echo "../,"; ls -A | awk '/./ {if ($NF=="/") printf "%s,", $0; els print $0}';) | sort -t "." -k 1,1 -k 2,2n | paste -sd "," -
